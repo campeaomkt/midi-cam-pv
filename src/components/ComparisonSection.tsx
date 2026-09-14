@@ -1,153 +1,197 @@
 import React from 'react';
-import { XCircle, CheckCircle2, Clock, Zap, Video, Sparkles } from 'lucide-react';
+import { XCircle, CheckCircle2, Clock, Zap, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 
 interface ComparisonSectionProps {
-  onOpenCheckout?: () => void;
   onScrollToOffer?: () => void;
+  onOpenCheckout?: () => void;
 }
 
-export const ComparisonSection: React.FC<ComparisonSectionProps> = () => {
-  const oldWaySteps = [
-    { step: 1, title: 'Gravar vídeo no celular/câmera', desc: 'Preocupar-se com enquadramento sem ver o MIDI.', time: '20 min' },
-    { step: 2, title: 'Gravar MIDI separado na DAW', desc: 'Abrir Reaper/Logic/Ableton, configurar canal MIDI e áudio.', time: '35 min' },
-    { step: 3, title: 'Renderizar teclado virtual (MidiVisualizer)', desc: 'Exportar arquivos transparentes pesados no computador.', time: '40 min' },
-    { step: 4, title: 'Sincronizar frame a frame no Premiere/DaVinci', desc: 'Casar áudio, vídeo das mãos e teclas com precisão milimétrica.', time: '60 min' },
-    { step: 5, title: 'Digitar manualmente as cifras e acordes', desc: 'Ouvir, descobrir o acorde e criar legendas uma a uma.', time: '30 min' },
-  ];
-
-  const midiCamSteps = [
-    { step: 1, title: 'Celular (Cabo OTG) ou PC Sem Fio (QR Code)', desc: 'Grave só com o celular e timbres .sf2 ou conecte ao PC via Wi-Fi em 3 segundos lendo o QR Code.', time: '10 seg' },
-    { step: 2, title: 'Tocar com SF2 próprio ou Playbacks do YouTube', desc: 'Carregue qualquer som SoundFont ou vídeo do YouTube no app para gravar áudio, backing track e teclas juntos.', time: 'Duração da música' },
-    { step: 3, title: 'Vídeo 4K gravado na hora na galeria', desc: 'Teclas acesas, cifras harmônicas e áudio sincronizado com zero latência. Sem edição posterior!', time: 'Instantâneo' },
-  ];
+export const ComparisonSection: React.FC<ComparisonSectionProps> = ({ onScrollToOffer, onOpenCheckout }) => {
+  const handleCta = onScrollToOffer || onOpenCheckout;
 
   return (
-    <section id="comparativo" className="py-14 sm:py-24 bg-[#09090b] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="comparativo" className="py-14 sm:py-24 bg-[#090a0f] relative overflow-hidden border-t border-zinc-800/80">
+      
+      {/* Background glow */}
+      <div className="absolute top-1/2 right-10 w-80 h-80 bg-[#00f2c3]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-[#00f2c3] mb-4">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-[#00f2c3] mb-4">
             <Clock className="w-3.5 h-3.5" />
-            <span>Produtividade Musical Radical</span>
+            <span>Comparativa de Productividad</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
-            Por que escolher o MIDI Cam?
+
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+            El Método Antiguo vs.{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f2c3] via-teal-300 to-cyan-400">
+              La Revolución con MIDI Cam
+            </span>
           </h2>
+
           <p className="text-sm sm:text-lg text-zinc-400">
-            Compare o processo exaustivo de edição tradicional com a revolução de 1 clique do MIDI Cam.
+            Descubre por qué cientos de tecladistas dejaron de perder horas en la computadora para publicar videos todos los días en redes sociales.
           </p>
         </div>
 
-        {/* Side-by-Side Comparison Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-16">
+        {/* Side-by-side Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-12 sm:mb-16">
           
-          {/* THE OLD WAY (O Jeito Antigo) */}
-          <div className="rounded-2xl sm:rounded-3xl bg-[#12131a]/60 border border-red-950/40 p-5 sm:p-8 relative overflow-hidden shadow-xl">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-zinc-800/80 mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center flex-shrink-0">
-                  <XCircle className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white">O Jeito Antigo</h3>
-                  <span className="text-xs text-zinc-400 font-mono">Edição Tradicional Fragmentada</span>
-                </div>
-              </div>
-              <div className="text-left sm:text-right">
-                <span className="inline-block text-xs font-mono text-red-400 font-bold bg-red-950/50 px-2.5 py-1 rounded-full border border-red-800/40">
-                  ~3 Horas Perdidas por Vídeo
-                </span>
-              </div>
-            </div>
-
-            {/* Steps Timeline */}
-            <div className="space-y-3 sm:space-y-4">
-              {oldWaySteps.map((item) => (
-                <div
-                  key={item.step}
-                  className="flex items-start gap-3 sm:gap-3.5 p-3 rounded-xl bg-zinc-950/50 border border-zinc-900"
-                >
-                  <span className="w-6 h-6 rounded-full bg-red-900/30 text-red-400 text-xs font-bold font-mono flex items-center justify-center flex-shrink-0 mt-0.5">
-                    {item.step}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-0.5 sm:gap-2">
-                      <h4 className="text-sm font-semibold text-zinc-200">{item.title}</h4>
-                      <span className="text-[11px] font-mono text-zinc-500">{item.time}</span>
-                    </div>
-                    <p className="text-xs text-zinc-400 mt-0.5">{item.desc}</p>
+          {/* Card Left: O Processo Antigo (Dor & Perda de Tempo) */}
+          <div className="rounded-3xl bg-[#140e11]/80 border border-red-900/30 p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden">
+            <div>
+              <div className="flex items-center justify-between pb-4 mb-6 border-b border-red-900/40">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center">
+                    <XCircle className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">Método Tradicional Agotador</h3>
+                    <span className="text-xs text-red-400/80 font-mono">Sin MIDI Cam</span>
                   </div>
                 </div>
-              ))}
+                <span className="text-xs font-mono font-bold text-red-400 px-2.5 py-1 rounded-full bg-red-950/60 border border-red-800/40">
+                  ~ 3 HORAS / VIDEO
+                </span>
+              </div>
+
+              <ul className="space-y-4 text-xs sm:text-sm text-zinc-300">
+                <li className="flex items-start gap-3">
+                  <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="text-white font-medium">Grabar por separado:</strong> cámara del celular por un lado, audio en el DAW por el otro y archivo MIDI en la computadora.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="text-white font-medium">Transferencia lenta de archivos:</strong> pasar gigabytes de video al PC mediante cables o nubes lentas.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="text-white font-medium">Sincronización manual cuadro a cuadro:</strong> dar palmadas o contar segundos intentando hacer coincidir el audio con la imagen.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="text-white font-medium">Crear animaciones de teclas complejas:</strong> renderizar animaciones de teclado en software pesado de edición de video.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <XCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="text-white font-medium">Cansancio y frustración:</strong> terminas el día agotado en vez de dedicarte a tocar y estudiar tu instrumento.
+                  </span>
+                </li>
+              </ul>
             </div>
 
-            {/* Pain summary footer */}
-            <div className="mt-6 p-4 rounded-xl bg-red-950/20 border border-red-900/30 text-xs text-red-300 flex items-center gap-3">
-              <XCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
-              <span>
-                Resultado: Desgaste mental, perda de criatividade e atraso constante no calendário de postagens.
-              </span>
+            <div className="mt-8 pt-5 border-t border-red-900/30 text-xs font-mono text-red-300">
+              ❌ Resultado: pocos videos publicados y horas de frustración técnica.
             </div>
           </div>
 
-          {/* WITH MIDI CAM (Com o MIDI Cam) */}
-          <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#11171d] to-[#0c0f16] border-2 border-[#00f2c3]/40 p-5 sm:p-8 relative overflow-hidden shadow-[0_10px_50px_rgba(0,242,195,0.12)]">
-            {/* Corner Badge */}
-            <div className="absolute top-0 right-0 bg-[#00f2c3] text-[#09090b] font-mono text-[10px] font-extrabold uppercase px-3 sm:px-4 py-1 rounded-bl-xl tracking-wider">
-              Fluxo Inteligente 2026
+          {/* Card Right: O Novo Jeito com MIDI Cam (Solução & Liberdade) */}
+          <div className="rounded-3xl bg-gradient-to-b from-[#0d1619] to-[#0c1117] border-2 border-[#00f2c3]/50 p-6 sm:p-10 flex flex-col justify-between relative overflow-hidden shadow-[0_10px_40px_rgba(0,242,195,0.15)]">
+            
+            {/* Glow pill */}
+            <div className="absolute top-0 right-0 px-4 py-1.5 rounded-bl-2xl bg-[#00f2c3] text-[#09090b] text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md">
+              <Zap className="w-3.5 h-3.5 fill-current" />
+              <span>100% Inmediato</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-zinc-800/80 mb-6 pt-2 sm:pt-0">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-[#00f2c3]/15 text-[#00f2c3] flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
-                    Com o MIDI Cam
-                    <Sparkles className="w-4 h-4 text-[#00f2c3]" />
-                  </h3>
-                  <span className="text-xs text-[#00f2c3] font-mono">100% Mobile em Tempo Real</span>
-                </div>
-              </div>
-              <div className="text-left sm:text-right">
-                <span className="inline-block text-xs font-mono text-[#00f2c3] font-bold bg-[#00f2c3]/10 px-2.5 py-1 rounded-full border border-[#00f2c3]/30">
-                  Pronto em 1 Clique
-                </span>
-              </div>
-            </div>
-
-            {/* Steps Timeline */}
-            <div className="space-y-3 sm:space-y-4">
-              {midiCamSteps.map((item) => (
-                <div
-                  key={item.step}
-                  className="flex items-start gap-3 sm:gap-3.5 p-3.5 sm:p-4 rounded-xl bg-zinc-950/70 border border-[#00f2c3]/20 shadow-sm"
-                >
-                  <span className="w-6 sm:w-7 h-6 sm:h-7 rounded-full bg-[#00f2c3] text-[#09090b] text-xs font-extrabold font-mono flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(0,242,195,0.4)]">
-                    {item.step}
-                  </span>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-0.5 sm:gap-2">
-                      <h4 className="text-sm sm:text-base font-bold text-white">{item.title}</h4>
-                      <span className="text-xs font-mono text-[#00f2c3] font-semibold">{item.time}</span>
-                    </div>
-                    <p className="text-xs text-zinc-300 mt-1">{item.desc}</p>
+            <div>
+              <div className="flex items-center justify-between pb-4 mb-6 border-b border-[#00f2c3]/30">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-[#00f2c3]/15 text-[#00f2c3] flex items-center justify-center">
+                    <CheckCircle2 className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">Flujo Inteligente con MIDI Cam</h3>
+                    <span className="text-xs text-[#00f2c3] font-mono">Tecnología Oficial 2026</span>
                   </div>
                 </div>
-              ))}
+                <span className="text-xs font-mono font-bold text-[#00f2c3] px-2.5 py-1 rounded-full bg-[#00f2c3]/15 border border-[#00f2c3]/40">
+                  LISTO AL INSTANTE
+                </span>
+              </div>
+
+              <ul className="space-y-4 text-xs sm:text-sm text-zinc-200">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00f2c3] flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="text-white font-semibold">Toca y graba en 1 toma:</strong> conecta el cable OTG o vincula vía Wi-Fi por Código QR a la PC y presiona Grabar.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00f2c3] flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="text-white font-semibold">Timbres .SF2 Propios sin DAW:</strong> reproduce pianos de cola, Rhodes y pads de alta fidelidad desde tu celular.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00f2c3] flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="text-white font-semibold">Sincronización con YouTube:</strong> practica con playbacks de YouTube directamente en la app sin desfase alguno.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00f2c3] flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="text-white font-semibold">Teclado y acordes automáticos:</strong> teclas iluminadas en tiempo real y detección precisa de acordes polifónicos.
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00f2c3] flex-shrink-0 mt-0.5" />
+                  <span>
+                    <strong className="text-white font-semibold">Exportación instantánea:</strong> al detener la grabación, el video ya está en tu galería listo para compartir en Instagram, TikTok o YouTube.
+                  </span>
+                </li>
+              </ul>
             </div>
 
-            {/* Success summary footer */}
-            <div className="mt-6 p-4 rounded-xl bg-[#00f2c3]/10 border border-[#00f2c3]/30 text-xs text-zinc-200 flex items-center gap-3">
-              <Zap className="w-5 h-5 text-[#00f2c3] flex-shrink-0" />
-              <span>
-                Resultado: Vídeo 4K gravado com áudio sincronizado, teclado iluminado e acordes na tela pronto para compartilhar direto do celular!
+            <div className="mt-8 pt-5 border-t border-[#00f2c3]/20 flex items-center justify-between">
+              <span className="text-xs font-mono text-[#00f2c3]">
+                ✔ Ahorras hasta 15 horas de edición cada semana
               </span>
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* CTA Bar */}
+        <div className="p-6 rounded-2xl bg-[#111219] border border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3 text-center sm:text-left">
+            <div className="w-10 h-10 rounded-xl bg-[#00f2c3]/15 text-[#00f2c3] flex items-center justify-center flex-shrink-0">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-white">¿Listo para ahorrar tiempo valioso?</h4>
+              <p className="text-xs text-zinc-400">Acceso vitalicio a la versión completa por solo U$7,90 (pago único).</p>
             </div>
           </div>
 
+          <button
+            onClick={handleCta}
+            className="w-full sm:w-auto px-6 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider bg-[#00f2c3] text-[#09090b] hover:bg-[#15fbd0] shadow-[0_0_20px_rgba(0,242,195,0.3)] transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+          >
+            <span>Ver Oferta Vitalicia (U$7,90)</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
 
       </div>

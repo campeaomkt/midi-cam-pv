@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MidiCamLogo } from './MidiCamLogo';
-import { Download, Sparkles } from 'lucide-react';
+import { Download } from 'lucide-react';
 
 interface StickyCtaBarProps {
   onOpenCheckout?: () => void;
@@ -13,7 +13,7 @@ export const StickyCtaBar: React.FC<StickyCtaBarProps> = ({ onOpenCheckout, onSc
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show when scrolled past hero (~600px)
+      // Show when scrolled past hero (~550px)
       setVisible(window.scrollY > 550);
     };
 
@@ -35,7 +35,7 @@ export const StickyCtaBar: React.FC<StickyCtaBarProps> = ({ onOpenCheckout, onSc
               MIDI Cam Oficial
             </span>
             <span className="text-[10px] text-zinc-400 font-mono">
-              Gravação 4K & Acordes em Tempo Real
+              Grabación 4K & Acordes en Tiempo Real
             </span>
           </div>
         </div>
@@ -47,7 +47,7 @@ export const StickyCtaBar: React.FC<StickyCtaBarProps> = ({ onOpenCheckout, onSc
             className="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-[#00f2c3] text-[#09090b] hover:bg-[#15fbd0] shadow-[0_0_20px_rgba(0,242,195,0.4)] transition-all flex items-center gap-2 active:scale-95 whitespace-nowrap cursor-pointer"
           >
             <Download className="w-4 h-4" />
-            <span>Ver Oferta (R$ 24,90)</span>
+            <span>Ver Oferta (U$7,90)</span>
           </button>
         </div>
 

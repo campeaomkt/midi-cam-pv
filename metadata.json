@@ -1,6 +1,6 @@
 {
-  "name": "MIDI Cam - Gravação de Vídeo & Teclado MIDI",
-  "description": "Landing page oficial do MIDI Cam: gravação de vídeo e teclado MIDI em tempo real com detecção inteligente de acordes.",
+  "name": "MIDI Cam - Grabación de Video & Teclado MIDI",
+  "description": "Landing page oficial de MIDI Cam: grabación de video y teclado MIDI en tiempo real con detección inteligente de acordes.",
   "requestFramePermissions": ["camera"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

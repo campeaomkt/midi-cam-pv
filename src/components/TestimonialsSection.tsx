@@ -17,13 +17,13 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-[#00f2c3] mb-4">
             <Award className="w-3.5 h-3.5" />
-            <span>Aprovado por Músicos e Educadores</span>
+            <span>Aprobado por Músicos y Educadores</span>
           </div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
-            Quem experimenta não volta ao processo antigo
+            Quien lo prueba no vuelve al método tradicional
           </h2>
           <p className="text-sm sm:text-lg text-zinc-400">
-            Veja como pianistas, tecladistas de igreja, criadores de conteúdo e professores transformaram seus vídeos.
+            Descubre cómo pianistas, tecladistas de iglesia, creadores de contenido y profesores transformaron sus videos.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
                       <CheckCircle className="w-3.5 h-3.5 text-[#00f2c3] flex-shrink-0" />
                     </h4>
                     <span className="text-[11px] sm:text-xs text-zinc-400 block">{t.role}</span>
-                    <span className="text-[10px] sm:text-[11px] font-mono text-zinc-500">Usa: {t.instrument}</span>
+                    <span className="text-[10px] sm:text-[11px] font-mono text-zinc-500">Toca con: {t.instrument}</span>
                   </div>
                 </div>
 
@@ -90,16 +90,16 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ onOpen
         <div id="para-criadores" className="rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#0d171d] via-[#101923] to-[#0d171d] border border-[#00f2c3]/30 p-5 sm:p-10 text-center relative overflow-hidden shadow-2xl">
           <div className="max-w-2xl mx-auto">
             <h3 className="text-xl sm:text-3xl font-extrabold text-white mb-2 sm:mb-3">
-              Pronto para elevar a autoridade visual das suas redes?
+              ¿Listo para llevar la calidad visual de tus redes al siguiente nivel?
             </h3>
             <p className="text-xs sm:text-base text-zinc-300 mb-5 sm:mb-6 leading-relaxed">
-              Junte-se aos tecladistas que já produzem conteúdo profissional todos os dias com zero atrito técnico.
+              Únete a los tecladistas y profesores que ya producen contenido profesional a diario con cero fricción técnica.
             </p>
             <button
               onClick={handleCta}
               className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-xs uppercase tracking-wider bg-[#00f2c3] text-[#09090b] hover:bg-[#15fbd0] shadow-[0_0_25px_rgba(0,242,195,0.4)] transition-all inline-flex items-center justify-center gap-2 cursor-pointer active:scale-95"
             >
-              <span>Ver Oferta Vitalícia e Benefícios (R$ 24,90)</span>
+              <span>Ver Oferta Vitalicia y Beneficios (U$7,90)</span>
             </button>
           </div>
         </div>

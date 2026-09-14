@@ -19,12 +19,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToOffer }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Como Receber Acesso', href: '#como-recebe-acesso' },
-    { name: 'Como Funciona', href: '#como-funciona' },
-    { name: 'Depoimentos', href: '#depoimentos' },
+    { name: 'Cómo Recibir Acceso', href: '#como-recebe-acesso' },
+    { name: 'Cómo Funciona', href: '#como-funciona' },
+    { name: 'Testimonios', href: '#depoimentos' },
     { name: 'Oferta Especial', href: '#oferta' },
-    { name: 'O Desenvolvedor', href: '#biografia' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'El Desarrollador', href: '#biografia' },
+    { name: 'Preguntas Frecuentes', href: '#faq' },
   ];
 
   return (
@@ -80,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToOffer }) => {
               className="relative group overflow-hidden px-5 py-2.5 rounded-full font-bold text-xs tracking-wide uppercase transition-all duration-300 active:scale-95 shadow-[0_0_20px_rgba(0,242,195,0.25)] hover:shadow-[0_0_30px_rgba(0,242,195,0.45)] bg-[#00f2c3] text-[#09090b] hover:bg-[#00f2c3]/90 flex items-center gap-2 cursor-pointer"
             >
               <Download className="w-4 h-4" />
-              <span>Ver Oferta (R$ 24,90)</span>
+              <span>Ver Oferta (U$7,90)</span>
             </button>
           </div>
 
@@ -91,13 +91,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToOffer }) => {
               onClick={onScrollToOffer}
               className="h-9 px-3.5 rounded-full text-xs font-bold bg-[#00f2c3] text-[#09090b] hover:bg-[#15fbd0] transition-all flex items-center justify-center active:scale-95 shadow-sm cursor-pointer"
             >
-              R$ 24,90
+              U$7,90
             </button>
             <button
               id="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="w-10 h-10 flex items-center justify-center rounded-xl bg-zinc-900/80 border border-zinc-800 text-zinc-300 hover:text-white transition-colors cursor-pointer"
-              aria-label="Alternar Menu"
+              aria-label="Alternar Menú"
             >
               {mobileMenuOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-zinc-300" />}
             </button>
@@ -129,7 +129,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToOffer }) => {
                 className="w-full py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-[#00f2c3] text-[#09090b] hover:bg-[#15fbd0] shadow-[0_0_20px_rgba(0,242,195,0.3)] flex items-center justify-center gap-2 cursor-pointer active:scale-95"
               >
                 <Download className="w-4 h-4" />
-                <span>Ver Oferta Especial (R$ 24,90)</span>
+                <span>Ver Oferta Especial (U$7,90)</span>
               </button>
             </div>
           </div>

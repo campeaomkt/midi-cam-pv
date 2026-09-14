@@ -1,226 +1,178 @@
 import React from 'react';
-import { Check, ShieldCheck, Zap, Lock, Sparkles, ArrowRight, Clock, Star, Gift, Smartphone, Monitor, Youtube, Music, Laptop, Headphones } from 'lucide-react';
+import { Download, ShieldCheck, CheckCircle2, Clock, Sparkles, AlertCircle, Zap, Star } from 'lucide-react';
+import { HOTMART_CHECKOUT_URL } from '../data';
 
 interface OfferSectionProps {
-  onOpenCheckout: () => void;
-  checkoutUrl?: string;
+  onOpenCheckout?: () => void;
 }
 
-export const OfferSection: React.FC<OfferSectionProps> = ({ onOpenCheckout, checkoutUrl }) => {
-  const handleCtaClick = () => {
-    if (checkoutUrl) {
-      window.location.href = checkoutUrl;
-    } else {
-      onOpenCheckout();
-    }
-  };
-
-  const benefits = [
-    {
-      title: 'App MIDI Cam para Celular (Android)',
-      desc: 'Conexão direta via cabo OTG, vídeo até 4K 60 FPS com áudio digital estéreo gravado direto na galeria.',
-      icon: Smartphone,
-    },
-    {
-      title: 'Carregamento de Timbres Próprios (.SF2)',
-      desc: 'Toque com seus pianos, sintetizadores, órgãos e timbres SoundFont favoritos direto no celular, sem DAWs.',
-      icon: Music,
-    },
-    {
-      title: 'Software Oficial para Computador (Windows)',
-      desc: 'Conecte seu controlador ao PC e espelhe as teclas no celular via Wi-Fi lendo um simples QR Code em 3 segundos.',
-      icon: Monitor,
-    },
-    {
-      title: 'Módulo YouTube Sync Integrado (1-Take)',
-      desc: 'Grave tocando sobre playbacks e backing tracks do YouTube com mixagem independente e zero edição posterior.',
-      icon: Youtube,
-    },
-    {
-      title: 'Reconhecimento Polifônico de Acordes',
-      desc: 'Motor inteligente que identifica e projeta mais de 1.800 variações de cifras e acordes na tela em tempo real.',
-      icon: Sparkles,
-    },
-    {
-      title: 'Personalização Visual Completa',
-      desc: '6 paletas de cores neon, escalas de 25 a 88 teclas (modos 2D e 3D) e filtros de câmera cinematográficos.',
-      icon: Gift,
-    },
-    {
-      title: 'Acesso à Área de Membros Premium',
-      desc: 'Portal exclusivo onde você baixa os instaladores oficiais e tem acesso vitalício a todas as atualizações.',
-      icon: Laptop,
-    },
-    {
-      title: 'Biblioteca de Aulas e Vídeo-Tutoriais',
-      desc: 'Aulas práticas gravadas mostrando cada configuração: cabo OTG, bancos .sf2, QR Code, YouTube e ajustes de som.',
-      icon: Clock,
-    },
-    {
-      title: 'Canal de Suporte Dedicado para Dúvidas',
-      desc: 'Atendimento e orientação direta para ajudar você a configurar perfeitamente seu modelo de teclado ou controlador.',
-      icon: Headphones,
-    },
-    {
-      title: 'Acesso Vitalício sem Mensalidades',
-      desc: 'Pague uma única vez e tenha acesso perpétuo ao sistema completo, sem nenhuma cobrança recorrente futura.',
-      icon: Star,
-    },
-  ];
-
+export const OfferSection: React.FC<OfferSectionProps> = ({ onOpenCheckout }) => {
   return (
-    <section id="oferta" className="py-14 sm:py-24 bg-[#08090d] relative overflow-hidden">
-      {/* Background glowing effects */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#00f2c3]/10 rounded-full blur-[160px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#3b82f6]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+    <section id="oferta" className="py-16 sm:py-28 relative overflow-hidden bg-gradient-to-b from-[#09090b] via-[#0d1217] to-[#09090b]">
+      
+      {/* Background glow effects */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#00f2c3]/8 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-10 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#141724] border border-[#262c42] text-xs font-bold text-[#00f2c3] uppercase tracking-wider mb-4 shadow-sm">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00f2c3]/15 border border-[#00f2c3]/30 text-xs font-mono font-bold text-[#00f2c3] mb-4 shadow-sm">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Condição Promocional Exclusiva</span>
+            <span>Condición Oficial Especial de Lanzamiento</span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4 leading-tight">
-            Garanta Seu Acesso Vitalício ao <br className="hidden sm:block" />
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight mb-4">
+            Comienza a Grabar Hoy con <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00f2c3] via-teal-300 to-cyan-400">
-              Pacote Completo MIDI Cam
+              MIDI Cam Completo
             </span>
           </h2>
 
           <p className="text-sm sm:text-lg text-zinc-300 leading-relaxed">
-            Economize mais de 3 horas por vídeo gravado. Tenha o sistema definitivo para celular e PC com área de membros, aulas em vídeo e suporte direto.
+            Sin mensualidades, sin anuncios molestos y sin pagar suscripciones abusivas. Acceso de por vida a la versión oficial completa.
           </p>
         </div>
 
-        {/* Big Premium Offer Box */}
-        <div className="rounded-2xl sm:rounded-3xl bg-[#0f111a] border-2 border-[#00f2c3]/40 shadow-[0_20px_70px_rgba(0,242,195,0.15)] overflow-hidden relative">
+        {/* The Master Offer Card */}
+        <div className="rounded-3xl bg-[#11131c] border-2 border-[#00f2c3]/60 p-6 sm:p-12 shadow-[0_20px_70px_rgba(0,242,195,0.2)] relative overflow-hidden">
           
-          {/* Top banner tag */}
-          <div className="bg-gradient-to-r from-[#00f2c3] to-cyan-400 py-2.5 px-3 sm:px-4 text-center">
-            <span className="text-[11px] sm:text-sm font-extrabold uppercase tracking-wider sm:tracking-widest text-[#09090b] flex items-center justify-center gap-1.5 sm:gap-2">
-              <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current flex-shrink-0" />
-              Oferta Especial de Lançamento • Acesso Imediato
-            </span>
+          {/* Top banner pill */}
+          <div className="absolute top-0 right-0 px-6 py-2 rounded-bl-2xl bg-[#00f2c3] text-[#09090b] font-mono font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shadow-md">
+            <Zap className="w-4 h-4 fill-current" />
+            <span>Acceso Vitalicio • Pago Único</span>
           </div>
 
-          <div className="p-4 sm:p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
             
-            {/* Left 7 Columns: Complete Benefits Checklist */}
-            <div className="lg:col-span-7 space-y-6">
+            {/* Left side: Everything included */}
+            <div className="lg:col-span-7 space-y-5">
+              
               <div>
-                <span className="text-xs font-mono uppercase tracking-wider text-[#00f2c3] font-bold">
-                  Tudo o Que Está Incluso na Sua Licença
+                <span className="text-xs font-mono uppercase tracking-widest text-[#00f2c3] font-semibold block mb-1">
+                  Paquete Oficial MIDI Cam
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-3">
-                  Sua Estrutura Completa de Gravação
+                <h3 className="text-2xl sm:text-3xl font-black text-white">
+                  Todo lo que recibes de inmediato:
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                  Você não está comprando apenas um app, mas uma solução completa que resolve desde a gravação autônoma no celular até a integração sem fio com o PC e playbacks do YouTube.
-                </p>
               </div>
 
-              {/* Benefits Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                {benefits.map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={idx}
-                      className="p-3.5 rounded-xl bg-[#141724]/80 border border-zinc-800/80 hover:border-[#00f2c3]/30 transition-colors flex items-start gap-3"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-[#00f2c3]/15 text-[#00f2c3] flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="w-4 h-4 stroke-[3]" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h4 className="text-xs sm:text-sm font-bold text-white leading-snug">
-                          {item.title}
-                        </h4>
-                        <p className="text-[11px] text-zinc-400 leading-relaxed mt-0.5">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
+              {/* Benefit checklist */}
+              <div className="space-y-3.5 pt-1">
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00f2c3] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-zinc-200">
+                    <strong className="text-white font-semibold">App MIDI Cam para Celular (Android):</strong> graba solo con el smartphone usando timbres propios (.SF2) vía cable OTG sin DAW.
+                  </span>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00f2c3] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-zinc-200">
+                    <strong className="text-white font-semibold">Software MIDI Cam para PC (Windows):</strong> sincronización inalámbrica en 3 segundos mediante Código QR.
+                  </span>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00f2c3] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-zinc-200">
+                    <strong className="text-white font-semibold">Integración de Playbacks de YouTube:</strong> reproduce cualquier backing track de YouTube y graba todo en una sola toma sin latencia.
+                  </span>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00f2c3] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-zinc-200">
+                    <strong className="text-white font-semibold">Personalización Completa:</strong> colores neón para las teclas, modelos de 25 a 88 teclas y filtros de cámara cinematográficos.
+                  </span>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00f2c3] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-zinc-200">
+                    <strong className="text-white font-semibold">Detector de Acordes Polifónicos Pro:</strong> más de 1.800 cifrados identificados en tiempo real mientras tocas.
+                  </span>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#00f2c3] flex-shrink-0 mt-0.5" />
+                  <span className="text-xs sm:text-sm text-zinc-200">
+                    <strong className="text-white font-semibold">Actualizaciones Futuras Incluidas:</strong> mejoras de rendimiento continuas sin pagar jamás nada extra.
+                  </span>
+                </div>
+
               </div>
 
-              {/* Security trust badges */}
-              <div className="pt-3 border-t border-zinc-800/80 flex flex-wrap items-center gap-4 text-xs text-zinc-400">
-                <div className="flex items-center gap-1.5 text-zinc-300">
-                  <ShieldCheck className="w-4 h-4 text-[#00f2c3]" />
-                  <span>Garantia de 7 Dias</span>
-                </div>
-                <div className="flex items-center gap-1.5 text-zinc-300">
-                  <Lock className="w-4 h-4 text-[#00f2c3]" />
-                  <span>Plataforma 100% Segura</span>
-                </div>
-                <div className="flex items-center gap-1.5 text-zinc-300">
-                  <Zap className="w-4 h-4 text-[#00f2c3]" />
-                  <span>Entrega Imediata</span>
-                </div>
-              </div>
             </div>
 
-            {/* Right 5 Columns: Price & Main Conversion Box */}
-            <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="w-full max-w-md p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-[#141826] to-[#0d0f17] border border-[#00f2c3]/30 text-center shadow-2xl relative overflow-hidden">
-                
-                {/* Floating pill */}
-                <div className="inline-block px-3 py-1 rounded-full bg-[#00f2c3]/10 border border-[#00f2c3]/30 text-[11px] font-bold text-[#00f2c3] uppercase tracking-wider mb-4">
-                  Acesso Vitalício • Pagamento Único
-                </div>
-
-                <div className="text-xs text-zinc-400 uppercase tracking-widest font-mono line-through mb-1">
-                  De R$ 97,00 por apenas
-                </div>
-
-                <div className="flex items-baseline justify-center gap-1 text-white my-2">
-                  <span className="text-2xl font-bold text-zinc-300">R$</span>
-                  <span className="text-5xl sm:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-[#00f2c3]">
-                    24
-                  </span>
-                  <span className="text-3xl font-black text-[#00f2c3]">,90</span>
-                </div>
-
-                <p className="text-xs text-zinc-400 mb-6">
-                  Sem mensalidades • Sem cobranças adicionais • Uso para sempre
-                </p>
-
-                {/* Main CTA Button */}
-                <button
-                  id="offer-cta-button"
-                  onClick={handleCtaClick}
-                  className="w-full relative group py-4 px-6 rounded-xl font-extrabold text-sm uppercase tracking-wider bg-[#00f2c3] text-[#09090b] hover:bg-[#15fbd0] shadow-[0_0_30px_rgba(0,242,195,0.4)] hover:shadow-[0_0_45px_rgba(0,242,195,0.6)] transition-all flex items-center justify-center gap-2 active:scale-95 overflow-hidden mb-4 cursor-pointer"
-                >
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-                  <span>Garantir Meu Acesso Vitalício</span>
-                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </button>
-
-                <p className="text-[11px] text-zinc-400 leading-relaxed mb-6">
-                  Compra processada em ambiente protegido. Você receberá os dados de acesso à Área de Membros diretamente no seu e-mail logo após a aprovação.
-                </p>
-
-                {/* 7-Day Guarantee Box */}
-                <div className="p-3.5 rounded-xl bg-zinc-950/70 border border-zinc-800 flex items-center gap-3 text-left">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0">
-                    <ShieldCheck className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-white">Garantia Blindada de 7 Dias</h5>
-                    <p className="text-[10px] text-zinc-400 leading-tight">
-                      Teste o MIDI Cam sem risco. Se não ficar 100% satisfeito, basta solicitar o reembolso.
-                    </p>
-                  </div>
-                </div>
-
+            {/* Right side: Price Box & Big Action */}
+            <div className="lg:col-span-5 flex flex-col items-center justify-center p-6 sm:p-8 rounded-2xl bg-[#090a0f] border border-zinc-800 text-center relative">
+              
+              <div className="w-full flex items-center justify-between pb-3 mb-4 border-b border-zinc-800 text-xs">
+                <span className="text-zinc-500 line-through">Precio Regular: U$19,90</span>
+                <span className="px-2 py-0.5 rounded bg-red-500/20 text-red-400 font-mono font-bold text-[10px]">
+                  60% OFF HOY
+                </span>
               </div>
+
+              <div className="my-2">
+                <span className="text-xs sm:text-sm font-mono text-zinc-400 block mb-1">
+                  Por solo pago único de
+                </span>
+                
+                <div className="flex items-baseline justify-center gap-1.5">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-[#00f2c3]">U$</span>
+                  <span className="text-5xl sm:text-6xl font-black text-white tracking-tight">7,90</span>
+                </div>
+
+                <span className="text-xs text-zinc-400 font-mono mt-1 block">
+                  Sin mensualidades • Acceso de por vida
+                </span>
+              </div>
+
+              {/* Big CTA Button */}
+              <a
+                id="offer-cta-button"
+                href={HOTMART_CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full mt-6 py-4 px-6 rounded-full font-extrabold text-sm uppercase tracking-wider bg-[#00f2c3] text-[#09090b] hover:bg-[#15fbd0] shadow-[0_0_30px_rgba(0,242,195,0.45)] hover:shadow-[0_0_45px_rgba(0,242,195,0.7)] transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95 group text-center no-underline"
+              >
+                <Download className="w-5 h-5 transition-transform group-hover:-translate-y-0.5" />
+                <span>Comprar Ahora por U$7,90</span>
+              </a>
+
+              {/* Security badges */}
+              <div className="mt-5 space-y-1.5 text-[11px] text-zinc-400">
+                <p className="flex items-center justify-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#00f2c3]" />
+                  <span>Pago 100% seguro con encriptación SSL</span>
+                </p>
+                <p className="flex items-center justify-center gap-1.5">
+                  <Clock className="w-3.5 h-3.5 text-[#00f2c3]" />
+                  <span>Liberación inmediata en tu correo electrónico</span>
+                </p>
+              </div>
+
             </div>
 
           </div>
+
+          {/* 7 Days Guarantee Bottom Banner */}
+          <div className="mt-8 pt-6 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center gap-4 bg-zinc-950/40 p-4 rounded-xl">
+            <div className="w-12 h-12 rounded-full bg-[#00f2c3]/15 text-[#00f2c3] flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="w-7 h-7" />
+            </div>
+            <div className="text-center sm:text-left">
+              <h4 className="text-sm font-bold text-white">Garantía Incondicional de 7 Días</h4>
+              <p className="text-xs text-zinc-400 mt-0.5">
+                Prueba MIDI Cam en tu teclado y computadora. Si por cualquier motivo no estás 100% satisfecho, te reembolsamos el 100% de tu dinero sin preguntas ni complicaciones.
+              </p>
+            </div>
+          </div>
+
         </div>
 
       </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FAQ_ITEMS } from '../data';
-import { ChevronDown, HelpCircle, MessageSquare, ShieldCheck, Cpu } from 'lucide-react';
+import { ChevronDown, HelpCircle, MessageSquare } from 'lucide-react';
 
 interface FaqSectionProps {
   onOpenCheckout?: () => void;
@@ -8,16 +8,15 @@ interface FaqSectionProps {
 }
 
 export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenCheckout, onScrollToOffer }) => {
-  const handleCta = onScrollToOffer || onOpenCheckout;
   const [openId, setOpenId] = useState<string | null>('teclados-compativeis');
   const [selectedCategory, setSelectedCategory] = useState<string>('todos');
 
   const categories = [
-    { id: 'todos', label: 'Todas as Dúvidas' },
-    { id: 'compatibilidade', label: 'Teclados e Marcas' },
-    { id: 'conexoes', label: 'Cabos e Conexões' },
-    { id: 'audio_video', label: 'Vídeo, Áudio e Acordes' },
-    { id: 'compra', label: 'Licença e Garantia' },
+    { id: 'todos', label: 'Todas las Dudas' },
+    { id: 'compatibilidade', label: 'Teclados y Marcas' },
+    { id: 'conexoes', label: 'Cables y Conexiones' },
+    { id: 'audio_video', label: 'Video, Audio y Acordes' },
+    { id: 'compra', label: 'Licencia y Garantía' },
   ];
 
   const filteredItems = selectedCategory === 'todos'
@@ -36,13 +35,13 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenCheckout, onScroll
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-[#00f2c3] mb-4">
             <HelpCircle className="w-3.5 h-3.5" />
-            <span>Perguntas Frequentes</span>
+            <span>Preguntas Frecuentes</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-            Tudo o que você precisa saber antes de adquirir
+            Todo lo que necesitas saber antes de comenzar
           </h2>
           <p className="text-sm sm:text-base text-zinc-400">
-            Respostas diretas sobre compatibilidade de teclados, cabos, latência e funcionamento do MIDI Cam.
+            Respuestas claras sobre compatibilidad de teclados, cables, latencia y funcionamiento de MIDI Cam.
           </p>
         </div>
 
@@ -52,7 +51,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenCheckout, onScroll
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold transition-all ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-semibold transition-all cursor-pointer ${
                 selectedCategory === cat.id
                   ? 'bg-[#00f2c3] text-[#09090b] shadow-[0_0_15px_rgba(0,242,195,0.3)]'
                   : 'bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800'
@@ -78,7 +77,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenCheckout, onScroll
               >
                 <button
                   onClick={() => toggleAccordion(item.id)}
-                  className="w-full px-4 sm:px-6 py-3.5 sm:py-5 flex items-center justify-between text-left gap-3 sm:gap-4"
+                  className="w-full px-4 sm:px-6 py-3.5 sm:py-5 flex items-center justify-between text-left gap-3 sm:gap-4 cursor-pointer"
                 >
                   <span className="text-sm sm:text-lg font-bold text-white leading-snug">
                     {item.question}
@@ -109,18 +108,18 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onOpenCheckout, onScroll
               <MessageSquare className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white">Não encontrou sua dúvida?</h4>
+              <h4 className="text-sm font-bold text-white">¿No encontraste tu duda?</h4>
               <p className="text-xs text-zinc-400">
-                Nosso suporte técnico responde prontamente para ajudar na sua configuração.
+                Nuestro soporte técnico responde prontamente para orientarte en tu configuración.
               </p>
             </div>
           </div>
 
           <button
             onClick={onOpenCheckout}
-            className="w-full sm:w-auto px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 transition-colors whitespace-nowrap text-center justify-center"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-zinc-800 hover:bg-zinc-700 text-white border border-zinc-700 transition-colors whitespace-nowrap text-center justify-center cursor-pointer"
           >
-            Falar com Suporte MIDI Cam
+            Contactar a Soporte MIDI Cam
           </button>
         </div>
 

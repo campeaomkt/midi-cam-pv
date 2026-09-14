@@ -1,105 +1,107 @@
 import { ScreenshotCard, Testimonial, FaqItem, ChordPreset } from './types';
 
+export const HOTMART_CHECKOUT_URL = 'https://pay.hotmart.com/O107610848O?checkoutMode=10&hideBillet=1';
+
 export const SCREENSHOT_CARDS: ScreenshotCard[] = [
   {
     id: 'modo-celular',
     badge: 'Modo 1 • 100% Celular',
-    title: 'Grave Só com o Celular',
-    subtitle: 'Timbres próprios em formato .SF2 sem DAW',
-    description: 'Conecte seu teclado diretamente ao smartphone via cabo OTG. Carregue seus próprios SoundFonts (.sf2) de pianos, Rhodes e sintetizadores sem precisar de computador ou DAW. O celular grava vídeo, áudio do timbre e o teclado virtual sincronizados em 1 clique.',
+    title: 'Graba Solo con tu Celular',
+    subtitle: 'Timbres propios en formato .SF2 sin DAW',
+    description: 'Conecta tu teclado directamente al smartphone mediante un cable OTG. Carga tus propios SoundFonts (.sf2) de pianos, Rhodes y sintetizadores sin necesidad de computadora ni DAW. El celular graba video, audio del timbre y el teclado virtual sincronizados en 1 solo clic.',
     chordName: 'Cmaj7 (9)',
     chordNotes: ['C3', 'E3', 'G3', 'B3', 'D4'],
     aspectRatio: '9:16',
     highlightKeys: [0, 4, 7, 11, 14],
     statsText: '100% Celular • Timbres .SF2',
     color: '#00f2c3',
-    features: ['Suporte nativo a .SF2', 'Sem necessidade de DAW', 'Cabo OTG direto no celular']
+    features: ['Soporte nativo para .SF2', 'Sin necesidad de DAW', 'Cable OTG directo al celular']
   },
   {
     id: 'modo-wifi-pc',
-    badge: 'Modo 2 • Conexão Sem Fio',
-    title: 'Sincronismo com PC via QR Code',
-    subtitle: 'Conexão Wi-Fi instantânea em 3 segundos',
-    description: 'Baixe o app oficial para PC (Windows) e aponte a câmera do celular para o QR Code na tela. Tudo o que você tocar no teclado controlador conectado ao PC acende no tecladinho virtual do celular em tempo real, com latência zero.',
+    badge: 'Modo 2 • Conexión Inalámbrica',
+    title: 'Sincronización con PC vía Código QR',
+    subtitle: 'Conexión Wi-Fi instantánea en 3 segundos',
+    description: 'Descarga la app oficial para PC (Windows) y apunta la cámara de tu celular al código QR en pantalla. Todo lo que toques en tu teclado controlador conectado a la PC se ilumina en el teclado virtual del celular en tiempo real, con latencia cero.',
     chordName: 'F#m7 (b5, 11)',
     chordNotes: ['F#2', 'A2', 'C3', 'E3', 'B3'],
     aspectRatio: '9:16',
     highlightKeys: [6, 9, 12, 16, 23],
-    statsText: 'QR Code Wi-Fi • Zero Latência',
+    statsText: 'Código QR Wi-Fi • Cero Latencia',
     color: '#00f2c3',
-    features: ['Sincronismo Wi-Fi instantâneo', 'Controlador no PC -> Celular', 'Suporte a SF2 no PC']
+    features: ['Sincronización Wi-Fi instantánea', 'Controlador en PC -> Celular', 'Soporte para SF2 en PC']
   },
   {
     id: 'youtube-sync',
     badge: 'Exclusivo • YouTube Sync',
-    title: 'Playbacks do YouTube no Celular',
-    subtitle: 'Gravação perfeitamente sincronizada',
-    description: 'Carregue qualquer link ou vídeo do YouTube dentro do app no PC. O celular recebe tudo em tempo real: áudio do YouTube, áudio do seu timbre e o tecladinho virtual aceso. Grava tudo de uma vez com sincronismo absoluto e sem latência.',
+    title: 'Playbacks de YouTube en el Celular',
+    subtitle: 'Grabación perfectamente sincronizada',
+    description: 'Carga cualquier enlace o video de YouTube dentro de la app en la PC. El celular recibe todo en tiempo real: audio de YouTube, audio de tu timbre y el teclado virtual iluminado. Graba todo de una sola vez con sincronía absoluta y sin latencia.',
     chordName: 'Abmaj9 (#11)',
     chordNotes: ['Ab2', 'C3', 'Eb3', 'G3', 'D4'],
     aspectRatio: '16:9',
     highlightKeys: [8, 12, 15, 19, 26],
-    statsText: 'Áudio YouTube + Timbre + Vídeo',
+    statsText: 'Audio YouTube + Timbre + Video',
     color: '#ef4444',
-    features: ['Carregue qualquer vídeo do YouTube', 'Áudio e MIDI integrados no celular', '1 take gravado com tudo pronto']
+    features: ['Carga cualquier video de YouTube', 'Audio y MIDI integrados en el celular', '1 sola toma grabada con todo listo']
   },
   {
     id: 'personalizacao',
-    badge: 'Customização • Do Seu Jeito',
-    title: 'Personalização Total de Estilo',
-    subtitle: 'Cores, modelos de teclado e filtros',
-    description: 'Deixe o app com a sua identidade visual: escolha cores neon marcantes para as teclas (Ciano, Roxo Synth, Âmbar, Vermelho), altere modelos de 25 a 88 teclas com perspectiva 3D e aplique filtros cinematográficos de câmera prontos para redes sociais.',
+    badge: 'Personalización • A tu Manera',
+    title: 'Personalización Total de Estilo',
+    subtitle: 'Colores, modelos de teclado y filtros',
+    description: 'Dale a la app tu propia identidad visual: elige colores neón vibrantes para las teclas (Cian, Púrpura Synth, Ámbar, Rojo), cambia modelos de 25 a 88 teclas con perspectiva 3D y aplica filtros cinematográficos de cámara listos para redes sociales.',
     chordName: 'Bb13 (sus4)',
     chordNotes: ['Bb2', 'Eb3', 'F3', 'Ab3', 'C4', 'G4'],
     aspectRatio: '9:16',
     highlightKeys: [10, 15, 17, 20, 24],
-    statsText: 'Cores • 25 a 88 Teclas • Filtros',
+    statsText: 'Colores • 25 a 88 Teclas • Filtros',
     color: '#00f2c3',
-    features: ['Cores neon configuráveis', 'Modelos de teclados virtuais', 'Filtros de câmera profissionais']
+    features: ['Colores neón configurables', 'Modelos de teclados virtuales', 'Filtros de cámara profesionales']
   },
   {
     id: 'camera-pro',
-    badge: 'Estúdio Pro • 4K 60FPS',
-    title: 'Câmera Pro & Detecção de Acordes',
-    subtitle: 'Cifragem harmônica polifônica em tempo real',
-    description: 'Reconhecimento instantâneo de acordes complexos, tétrades e inversões. Gravação de alta definição em 4K a 60 FPS com controles profissionais e exportação automática direto para a galeria do smartphone.',
+    badge: 'Estudio Pro • 4K 60FPS',
+    title: 'Cámara Pro & Detección de Acordes',
+    subtitle: 'Cifrado armónico polifónico en tiempo real',
+    description: 'Reconocimiento instantáneo de acordes complejos, tétradas e inversiones. Grabación en alta definición 4K a 60 FPS con controles profesionales y exportación automática directo a la galería del smartphone.',
     chordName: 'Dm9 / G',
     chordNotes: ['G1', 'D3', 'F3', 'A3', 'C4', 'E4'],
     aspectRatio: '9:16',
     highlightKeys: [7, 14, 17, 21, 24],
-    statsText: '4K 60 FPS • Cifras em Tempo Real',
+    statsText: '4K 60 FPS • Acordes en Tiempo Real',
     color: '#00f2c3',
-    features: ['Mais de 1.800 acordes detectados', 'Vídeo 4K/60FPS para Reels & Shorts', '1 toque para salvar na galeria']
+    features: ['Más de 1.800 acordes detectados', 'Video 4K/60FPS para Reels & Shorts', '1 toque para guardar en galería']
   }
 ];
 
 export const CHORD_PRESETS: ChordPreset[] = [
   {
     name: 'Cmaj9',
-    root: 'Dó',
-    type: 'Maior com Sétima Maior',
-    tensions: '9ª maior',
+    root: 'Do',
+    type: 'Mayor con Séptima Mayor',
+    tensions: '9ª mayor',
     keys: [0, 4, 7, 11, 14],
     notes: ['C', 'E', 'G', 'B', 'D'],
-    description: 'Acorde suave e luminoso muito usado em Neo-Soul, MPB e Lo-Fi.'
+    description: 'Acorde suave y luminoso muy utilizado en Neo-Soul, Baladas y Lo-Fi.'
   },
   {
     name: 'F#m7 (b5)',
-    root: 'Fá sustenido',
-    type: 'Meio-diminuto',
+    root: 'Fa sostenido',
+    type: 'Semidisminuido',
     tensions: 'b5, 7ª menor',
     keys: [6, 9, 12, 16],
     notes: ['F#', 'A', 'C', 'E'],
-    description: 'Tensão clássica de preparação em cadências menores e Jazz.'
+    description: 'Tensión clásica de preparación en cadencias menores y Jazz.'
   },
   {
     name: 'Dm9',
-    root: 'Ré',
-    type: 'Menor com Sétima',
-    tensions: '9ª adicionada',
+    root: 'Re',
+    type: 'Menor con Séptima',
+    tensions: '9ª añadida',
     keys: [2, 5, 9, 12, 14],
     notes: ['D', 'F', 'A', 'C', 'E'],
-    description: 'Rico e aveludado, ideal para introduções e baladas modernas.'
+    description: 'Rico y aterciopelado, ideal para introducciones y baladas modernas.'
   },
   {
     name: 'G13 (b9)',
@@ -108,16 +110,16 @@ export const CHORD_PRESETS: ChordPreset[] = [
     tensions: '13ª, b9',
     keys: [7, 10, 11, 14, 16],
     notes: ['G', 'B', 'D', 'F', 'Ab', 'E'],
-    description: 'Harmonia refinada de Gospel e Jazz contemporâneo com resolução forte.'
+    description: 'Armonía refinada de Gospel y Jazz contemporáneo con resolución potente.'
   },
   {
     name: 'Abmaj7 (#11)',
-    root: 'Lá bemol',
-    type: 'Modo Lídio',
+    root: 'La bemol',
+    type: 'Modo Lidio',
     tensions: '#11, 7M',
     keys: [8, 12, 15, 18, 20],
     notes: ['Ab', 'C', 'Eb', 'G', 'D'],
-    description: 'Sensação etérea e cinematográfica, muito popular em trilhas e fusion.'
+    description: 'Sensación etérea y cinematográfica, muy popular en bandas sonoras y fusion.'
   }
 ];
 
@@ -125,45 +127,45 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
     name: 'Gabriel Rezende',
-    role: 'Pianista & Produtor Musical',
+    role: 'Pianista & Productor Musical',
     instrument: 'Nord Stage 3',
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
-    content: 'Eu gastava quase 3 horas por dia sincronizando MIDI no After Effects e Premiere para postar um Reels de 30 segundos. Com o MIDI Cam, conecto o cabo OTG no meu teclado, toco e em 1 clique o vídeo já está pronto com as teclas acesas e o nome do acorde na tela. Mudou minha rotina.',
+    content: 'Pasaba casi 3 horas al día sincronizando MIDI en After Effects y Premiere para publicar un Reel de 30 segundos. Con MIDI Cam, conecto el cable OTG a mi teclado, toco y con 1 solo clic el video ya queda listo con las teclas iluminadas y el acorde en pantalla. Transformó por completo mi rutina.',
     stars: 5,
-    highlight: 'Economizo 15 horas semanais de edição',
+    highlight: 'Ahorro 15 horas semanales de edición',
     followers: '142k seguidores'
   },
   {
     id: '2',
     name: 'Larissa Alencar',
-    role: 'Professora de Piano Popular',
+    role: 'Profesora de Piano Popular',
     instrument: 'Yamaha P-125',
     avatarUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80',
-    content: 'O detector de acordes é assustadoramente preciso. Meus alunos ficam encantados porque eles conseguem ver exatamente o formato da minha mão junto com a cifra e a cor neon nas teclas. Não existe nada similar no mercado.',
+    content: 'El detector de acordes es increíblemente preciso. Mis alumnos quedan fascinados porque pueden ver con total claridad la posición de mis manos junto con el cifrado y el color neón en las teclas. No existe nada igual en el mercado.',
     stars: 5,
-    highlight: 'Didática visual 10x superior para os alunos',
-    followers: '89k inscritos'
+    highlight: 'Didáctica visual 10x superior para mis alumnos',
+    followers: '89k suscriptores'
   },
   {
     id: '3',
     name: 'Matheus Fontes',
-    role: 'Criador de Conteúdo e Tecladista',
+    role: 'Creador de Contenido y Tecladista',
     instrument: 'Roland Fantom 08',
     avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-    content: 'A perspectiva 3D das teclas é um detalhe de gênio: parece que o teclado virtual é uma continuação exata dos meus dedos. Gravei meus últimos 20 vídeos todos pelo MIDI Cam em 4K. O visual ciano neon virou a marca registrada do meu canal.',
+    content: 'La perspectiva 3D de las teclas es un detalle genial: parece que el teclado virtual fuera una extensión exacta de mis dedos. He grabado mis últimos 20 videos todos con MIDI Cam en 4K. El estilo cian neón se convirtió en el sello distintivo de mi canal.',
     stars: 5,
-    highlight: 'Qualidade 4K impecável e zero latência',
+    highlight: 'Calidad 4K impecable y cero latencia',
     followers: '210k seguidores'
   },
   {
     id: '4',
     name: 'Beatriz Vasconcelos',
-    role: 'Pianista Clássica & Jazz',
+    role: 'Pianista Clásica & Jazz',
     instrument: 'Casio Privia PX-S3100',
     avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
-    content: 'Mesmo tocando voicings rápidos e acordes com 6 ou 7 notas, a resposta gráfica não engasga. O suporte via Wi-Fi funciona perfeitamente sem nenhum cabo na gravação.',
+    content: 'Incluso tocando voicings rápidos y acordes complejos con 6 o 7 notas, la respuesta gráfica no se traba jamás. La conexión inalámbrica vía Wi-Fi funciona de manera impecable sin cables estorbando la toma.',
     stars: 5,
-    highlight: 'Perfeita resposta polifônica em alta velocidade',
+    highlight: 'Respuesta polifónica perfecta a gran velocidad',
     followers: '45k seguidores'
   }
 ];
@@ -172,55 +174,55 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'so-celular-sf2',
     category: 'conexoes',
-    question: 'Posso usar somente o celular via cabo e carregar meus próprios timbres?',
-    answer: 'Sim! Se você preferir praticidade máxima, pode usar apenas o celular conectado diretamente ao teclado por um cabo USB com adaptador OTG. O MIDI Cam permite carregar timbres próprios no formato SoundFont (.sf2) direto na memória do celular, sem depender de nenhuma DAW (como Reaper, Ableton ou FL Studio) ou computador. O app processa o áudio do instrumento com fidelidade e grava o vídeo com as teclas acesas de forma 100% autônoma.'
+    question: '¿Puedo usar únicamente el celular con cable y cargar mis propios timbres?',
+    answer: '¡Sí! Si buscas máxima comodidad, puedes usar solo tu celular conectado directamente al teclado con un cable USB y adaptador OTG. MIDI Cam te permite cargar timbres propios en formato SoundFont (.sf2) directamente en la memoria del celular, sin depender de ningún DAW (como Reaper, Ableton o FL Studio) ni de una computadora. La app procesa el audio del instrumento con alta fidelidad y graba el video con las teclas iluminadas de manera 100% autónoma.'
   },
   {
     id: 'gravacao-sem-fio-qr',
     category: 'conexoes',
-    question: 'Como funciona a gravação sem fio pelo computador com QR Code?',
-    answer: 'É simples e instantâneo: basta baixar o aplicativo oficial do MIDI Cam para PC (Windows). Ao abrir o programa no PC, ele exibe um QR Code na tela. Você aponta a câmera do celular, lê o código e o sistema sincroniza via Wi-Fi em menos de 3 segundos. Tudo o que você tocar no seu teclado controlador conectado ao PC aparece no tecladinho virtual do celular em tempo real, com latência zero!'
+    question: '¿Cómo funciona la grabación inalámbrica con la computadora mediante código QR?',
+    answer: 'Es muy sencillo e instantáneo: solo descargas la aplicación oficial de MIDI Cam para PC (Windows). Al abrir el programa en la PC, verás un código QR en pantalla. Apuntas la cámara de tu celular, escaneas el código y ambos se sincronizan por Wi-Fi en menos de 3 segundos. ¡Todo lo que toques en tu teclado controlador conectado a la PC se refleja en el teclado virtual del celular en tiempo real, sin latencia!'
   },
   {
     id: 'youtube-integrado',
     category: 'audio_video',
-    question: 'Como funciona a gravação integrada com vídeos do YouTube?',
-    answer: 'Esse é um dos recursos mais poderosos do MIDI Cam: dentro do aplicativo no PC, você pode carregar qualquer vídeo ou playback do YouTube (backing tracks, músicas de estudo ou aulas). Ao gravar, o celular recebe tudo simultaneamente: o áudio do YouTube, o áudio do seu timbre (formato .sf2) e o tecladinho virtual aceso. O vídeo final fica gravado direto no celular em 1 take perfeitamente sincronizado sem descompasso.'
+    question: '¿Cómo funciona la grabación integrada con videos de YouTube?',
+    answer: 'Es una de las funciones más potentes de MIDI Cam: dentro de la aplicación en la PC, puedes cargar cualquier video o pista de YouTube (backing tracks, canciones de práctica o tutoriales). Al grabar, el celular recibe todo simultáneamente: el audio de YouTube, el sonido de tu timbre (formato .sf2) y el teclado virtual iluminado. El video final se guarda directo en el celular en 1 sola toma perfectamente sincronizada sin desfases.'
   },
   {
     id: 'personalizacao-visual',
     category: 'audio_video',
-    question: 'Posso personalizar as cores, modelos de teclado e filtros de câmera?',
-    answer: 'Sim, a personalização é completa! Você pode escolher as cores neon das teclas iluminadas (Ciano Neon Oficial, Roxo Synthwave, Âmbar Vintage, Vermelho REC, Azul Elétrico e Verde Esmeralda), configurar modelos de teclado virtual (de 25 a 88 teclas) e aplicar filtros cinematográficos de câmera prontos para destacar seus vídeos nas redes sociais (Reels, TikTok, Shorts).'
+    question: '¿Puedo personalizar los colores, modelos de teclado y filtros de cámara?',
+    answer: '¡Sí, la personalización es total! Puedes elegir los colores neón de las teclas iluminadas (Cian Neón Oficial, Púrpura Synthwave, Ámbar Vintage, Rojo REC, Azul Eléctrico y Verde Esmeralda), configurar modelos de teclado virtual (de 25 a 88 teclas) y aplicar filtros cinematográficos de cámara listos para destacar tus videos en redes sociales (Reels, TikTok, Shorts).'
   },
   {
     id: 'compatibilidade-sistemas',
     category: 'compatibilidade',
-    question: 'Quais sistemas são compatíveis atualmente?',
-    answer: 'O MIDI Cam é compatível com Android e Windows por enquanto. Você pode usar no celular ou tablet Android de forma 100% independente com cabo OTG, ou em conjunto com o aplicativo para computadores com Windows via Wi-Fi.'
+    question: '¿Qué sistemas operativos son compatibles actualmente?',
+    answer: 'MIDI Cam es compatible con Android y Windows. Puedes usarlo en tu celular o tablet Android de forma 100% independiente con cable OTG, o en conjunto con la aplicación para computadoras con Windows mediante Wi-Fi.'
   },
   {
     id: 'teclados-compativeis',
     category: 'compatibilidade',
-    question: 'Qualquer teclado ou controlador é compatível?',
-    answer: 'Sim! O MIDI Cam é compatível com qualquer teclado, piano digital ou controlador que possua saída USB-MIDI padrão ou conexão MIDI tradicional (Yamaha, Roland, Casio, Nord, Korg, Novation, Alesis, Behringer, Kurzweil, M-Audio, Arturia, Kawai, etc.).'
+    question: '¿Cualquier teclado o controlador es compatible?',
+    answer: '¡Sí! MIDI Cam es compatible con cualquier teclado, piano digital o controlador que cuente con salida USB-MIDI estándar o conexión MIDI tradicional (Yamaha, Roland, Casio, Nord, Korg, Novation, Alesis, Behringer, Kurzweil, M-Audio, Arturia, Kawai, etc.).'
   },
   {
     id: 'desenvolvedor-eliab',
     category: 'compra',
-    question: 'Quem é o desenvolvedor do MIDI Cam?',
-    answer: 'O MIDI Cam foi desenvolvido por Eliab Campos, criado com foco total nas dores reais de tecladistas e criadores de conteúdo que buscam praticidade, sincronismo perfeito e liberdade sonora.'
+    question: '¿Quién es el desarrollador de MIDI Cam?',
+    answer: 'MIDI Cam fue desarrollado por Eliab Campos, pianista y profesor de teclado con más de 15 años de experiencia, creado con un enfoque total en las necesidades reales de los músicos que buscan practicidad, sincronía perfecta y libertad creativa.'
   },
   {
     id: 'licenca-vitalicia',
     category: 'compra',
-    question: 'O valor de R$ 24,90 é assinatura mensal ou pagamento único?',
-    answer: 'É pagamento ÚNICO de R$ 24,90. Você tem acesso vitalício ao aplicativo oficial MIDI Cam para Celular (Android) e para PC (Windows) com todas as atualizações futuras inclusas, sem cobranças recorrentes.'
+    question: '¿El precio de U$7,90 es una suscripción mensual o un pago único?',
+    answer: 'Es un PAGO ÚNICO de U$7,90. Obtienes acceso de por vida a la aplicación oficial MIDI Cam para Celular (Android) y para PC (Windows) con todas las actualizaciones futuras incluidas, sin cargos recurrentes jamás.'
   },
   {
     id: 'garantia',
     category: 'compra',
-    question: 'Como funciona a garantia incondicional de 7 dias?',
-    answer: 'Você pode testar o MIDI Cam tranquilamente no seu setup. Se por qualquer motivo não ficar 100% satisfeito, basta enviar uma mensagem para o suporte que o valor de R$ 24,90 é reembolsado integralmente.'
+    question: '¿Cómo funciona la garantía incondicional de 7 días?',
+    answer: 'Puedes probar MIDI Cam con total tranquilidad en tu estudio o casa. Si por cualquier motivo no quedas 100% satisfecho, simplemente envías un mensaje a soporte y te reembolsamos el importe total de U$7,90 de inmediato.'
   }
 ];
